@@ -21,14 +21,16 @@ func SetOutput(w io.Writer) {
 
 // Log example (must use defer):
 //
-// func do() {
-// 	defer Log("aaa")("bbb")
-// 	time.Sleep(1e7)
-// }
+//	func do() {
+//		defer Log("aaa")("bbb")
+//		time.Sleep(1e7)
+//	}
 //
 // will output 2 logs:
-// 2019/08/06 19:02:56.670369 deferlog_test.go:12: [--->] aaa
-// 2019/08/06 19:02:56.683101 deferlog_test.go:12: [<---] aaa bbb
+//
+//	2019/08/06 19:02:56.670369 deferlog_test.go:12: [--->] aaa
+//	2019/08/06 19:02:56.683101 deferlog_test.go:12: [<---] aaa bbb
+//
 // first log are printed immediately when do runs, with first args.
 // second log are printed when do finished, with first and second args.
 func Log(args ...interface{}) func(args2 ...interface{}) {

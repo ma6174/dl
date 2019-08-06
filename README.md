@@ -8,7 +8,7 @@ print two logs(in and out of function) with two different args in one line.
 import "github.com/ma6174/dl"
 
 func do() {
-	defer dl.Log("aaa")("bbb")
+	defer dl.Log("aaa")("bbb") // must use with defer
 	time.Sleep(1e7)
 }
 ```
